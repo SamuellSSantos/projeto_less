@@ -1,4 +1,5 @@
-@import "variaveis.less";
+@import "mapas.less";
+
 @breakpointMobile: ~"(max-width: 767px)";
 @breakpointTablet: ~"(min-width: 768px)and(max-width: 1028px)";
 
@@ -12,8 +13,8 @@
     font-family: "Roboto", serif;
 }
 body{
-    background-color: @corDeFundo;
-    color: @corDosTextos;
+    background-color: #colors[backgroundcolor];
+    color: #colors[textColor];
 }
 
 .container{
@@ -21,14 +22,25 @@ body{
     width: 100%;
     margin: 0 auto;
     
+        @media @breakpointMobile {
+            max-width: 70%;
+            
         @media @breakpointTablet {
             max-width: 80%;
             background-color: aqua;
         }
 
-    @media @breakpointMobile {
-        max-width: 70%;
-        background-color: red;
+    }
+    nav{
+        ul{
+            li{
+                a{
+                    img{
+                        
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -60,6 +72,44 @@ header{
             font-size: 14px;
             opacity: 0.7;
         }
+
+}
+
+li{
+    list-style: none;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    max-width: 240px;
+    width: 100%;
+    margin: 0 auto;
+    li{
+        
+        img{
+            transition: all ease .3;
+            &:hover{
+                transform: scale(1.3);
+            }
+        }
+    }
+}
+
+.projects-list{
+    &-item{
+        margin:  20px auto;
+        padding: 16px 20px;
+        background-color: #colors[buttonColor];
+        border-radius: 25%;
+        a{
+            text-decoration: none ;
+            background-color: #colors[buttonColor];
+            display: block;
+            text-align: center;
+        }
+    }
+    
 }
 
 
